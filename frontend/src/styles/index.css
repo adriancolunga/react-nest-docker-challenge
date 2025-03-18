@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+
+  h1 {
+    @apply text-2xl;
+    font-family: 'Roboto', 'Helvetica', 'Helvetica Neue', 'Nunito Sans', sans-serif;
+  }
+  h2 {
+    @apply text-xl;
+    font-family: 'Roboto', 'Helvetica', 'Helvetica Neue', 'Nunito Sans', sans-serif;
+  }
+  h3 {
+    @apply text-lg;
+    font-family: 'Roboto', 'Helvetica', 'Helvetica Neue', 'Nunito Sans', sans-serif;
+  }
+
+  a {
+    @apply text-blue-600 underline;
+    color: var(--brand-primary);
+  }
+}
+
+@layer components {
+  :root {
+    --brand-primary: #c1292e;
+    --brand-background: #ffffff;
+    --brand-active: #c1292e;
+    --brand-header-background: #e2e1e1;
+    --primary-red: #c1292e;
+    --red-hover: #c1292e;
+    --primary-white: #ffffff;
+    --white-hover: #f2f2f2;
+  }
+
+  .btn {
+    @apply p-3 rounded-md focus:outline-none text-white transition-all;
+    background-color: var(--brand-primary);
+    color: var(--primary-white);
+  }
+  .btn:hover {
+    background-color: var(--red-hover);
+  }
+  .btn.danger {
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+  }
+
+  .input {
+    @apply rounded-md border-gray-300 transition-colors disabled:opacity-50;
+  }
+
+  .card {
+    @apply p-5 rounded-md bg-white border;
+    background-color: var(--primary-white);
+  }
+
+  .table-container {
+    @apply border rounded-lg mt-5 shadow overflow-x-auto;
+    background-color: var(--primary-white);
+  }
+
+  .table-filter {
+    @apply flex flex-col lg:flex-row gap-5 rounded-lg p-3 shadow overflow-x-auto border;
+  }
+  
+  .sidebar {
+    @apply fixed h-full w-72 p-5 shadow flex flex-col transform -translate-x-72 bg-white lg:translate-x-0 transition-transform;
+    background-color: var(--brand-header-background)
+  }
+  .sidebar.show {
+    @apply translate-x-0 !important;
+  }
+}
+
